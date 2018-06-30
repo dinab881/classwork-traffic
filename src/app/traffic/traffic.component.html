@@ -1,0 +1,18 @@
+<div class="trafficlight"
+     (click)="toggleDown();"
+     tabndex="1"
+     (keydown.ArrowDown)="toggleDown()"
+     (keydown.ArrowUp)="toggleUp()"
+     (keydown.Space) = "toggleUp()"
+>
+  <div class="protector"></div>
+  <div class="protector"></div>
+  <div class="protector"></div>
+  <div class="bulb"
+       *ngFor="let c of ['red', 'yellow', 'green']"
+       (click) ="switchColor(c); $event.stopPropagation();"
+       [ngClass] = "currentColor === c ? c : ''"
+  >
+
+  </div>
+</div>
